@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+   xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans http://springframework.org/schema/beans/spring-beans.xsd">
+
+   <bean id="student1" class="com.spring.ex.Student">
+   	  <constructor-arg value="김요한" />
+   	  <constructor-arg value="25"/>	<!-- constructor - 생성자 -->
+   	  <constructor-arg value="3학년"/><!-- 기본생성자 없어서 생성하자마자 만들어야 함 -->
+   	  <constructor-arg value="7번"/><!--constructor-arg - 생성하자마자 바로 값을 넣어야할 때  -->
+   </bean>
+   
+   <bean id="student2" class="com.spring.ex.Student">
+   	  <constructor-arg value="홍길동" />
+   	  <constructor-arg value="17"/>
+   	  <constructor-arg value="3학년"/>
+   	  <constructor-arg value="15번"/>
+   </bean>
+
+	<bean id="studentInfo" class="com.spring.ex.StudentInfo">
+		<constructor-arg >
+			<ref bean="student1"/>
+		</constructor-arg>
+	</bean>
+</beans>
+
+
+
